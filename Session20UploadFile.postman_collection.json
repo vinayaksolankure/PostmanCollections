@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "4b39ea6a-8f90-487b-a8d7-8c51bbf22cd7",
+		"name": "Session20UploadFile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33382819"
+	},
+	"item": [
+		{
+			"name": "PostRequestToUploadFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": [
+								"/C:/Users/HP/Desktop/PostmantTestFileUpload/SecondTestfile.txt",
+								"/C:/Users/HP/Desktop/PostmantTestFileUpload/testFileUpload.txt"
+							]
+						},
+						{
+							"key": "data",
+							"value": "{{$randomFirstName}}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://httpbin.org/post",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostRequestToUploadImageInSwagger",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/Downloads/roseImage.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/1/uploadImage",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"1",
+						"uploadImage"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
