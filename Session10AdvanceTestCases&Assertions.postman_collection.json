@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "08463984-908b-4f1b-9c5c-aa795e5d2abf",
+		"name": "Session10AdvanceTestCases&Assertions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33382819"
+	},
+	"item": [
+		{
+			"name": "GetRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//parse json data in response\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Script1\", function()\r",
+							"{\r",
+							"console.log(jsonData.total);\r",
+							"//Validate Avtar\r",
+							"pm.expect(jsonData.data[1].avatar).to.eql(\"https://reqres.in/img/faces/2-image.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Script2\", function()\r",
+							"{\r",
+							"console.log(jsonData.total);\r",
+							"//validate support url\r",
+							"pm.expect(jsonData.support.url).to.eql(\"https://reqres.in/#support-heading\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Count and log Id's\", function()\r",
+							"{\r",
+							"console.log(\"Total ID's are: \",jsonData.data.length);\r",
+							"for(var id=0; id<jsonData.data.length; id++)//0,1,2,3,4,5\r",
+							"{\r",
+							"console.log(\"Printed ID is: \",jsonData.data[id].id, \"Printed first_name is: \",jsonData.data[id].first_name);//here x.data[0].id taken from JSONFINDER\r",
+							"}});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"orderID\", jsonData.uuid);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/uuid",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderID\":\"{{orderID}}\",\r\n    \"products\":[\r\n        {\r\n        \"quantity\":\"15\",\r\n        \"productID\":\"115\"\r\n        },\r\n        {\r\n        \"quantity\":\"20\",\r\n        \"productID\":\"120\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://httpbin.org/post",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

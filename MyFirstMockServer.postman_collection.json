@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "e00ea498-d84d-4ca1-b5a2-166b99f38a6c",
+		"name": "MyFirstMockServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33382819"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/Get",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Get"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/Get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Get"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "This is mock response"
+				}
+			]
+		},
+		{
+			"name": "GetInJson",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/Get",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Get"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "JsonData",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ff1b90ad-08ed-4682-bdb8-c91b1d6cbe9e.mock.pstmn.io/GetInJson",
+							"protocol": "https",
+							"host": [
+								"ff1b90ad-08ed-4682-bdb8-c91b1d6cbe9e",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"GetInJson"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"name\":\"{{$randomFirstName}}\",\r\n    \"username\":\"{{$randomUserName}}\",\r\n    \"location\":\"{{$randomStreetName}}\",\r\n    \"time\":\"{{$timestamp}}\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/Post",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Post"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/Post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Post"
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "This is mock response for post method"
+				}
+			]
+		},
+		{
+			"name": "QueryParameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/GetInJson",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"GetInJson"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user?id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\":1\r\n}"
+				},
+				{
+					"name": "Example2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user?id=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://ff1b90ad-08ed-4682-bdb8-c91b1d6cbe9e.mock.pstmn.io"
+		}
+	]
+}

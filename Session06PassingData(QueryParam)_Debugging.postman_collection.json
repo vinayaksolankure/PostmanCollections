@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "c0d73883-dd10-4bc8-973e-adc23448493a",
+		"name": "Session06PassingData(QueryParam)_Debugging",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33382819"
+	},
+	"item": [
+		{
+			"name": "GetRequest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Myheader",
+						"value": "Myvalue",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://httpbin.org/get?name=vinayak&age=24&email=vinayak@gmail",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "vinayak"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						},
+						{
+							"key": "email",
+							"value": "vinayak@gmail"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/status/:status?name=vinayak",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"status",
+						":status"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "vinayak"
+						}
+					],
+					"variable": [
+						{
+							"key": "status",
+							"value": "401"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
