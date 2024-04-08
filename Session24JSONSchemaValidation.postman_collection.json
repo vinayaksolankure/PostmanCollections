@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "e43f82e6-01a0-4ab4-bc8e-f302cc8279ae",
+		"name": "Session24JSONSchemaValidation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33382819"
+	},
+	"item": [
+		{
+			"name": "JsonSchemaValidation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var schema = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"default\": {},\r",
+							"    \"title\": \"Root Schema\",\r",
+							"    \"required\": [\r",
+							"        \"token\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"token\": {\r",
+							"            \"type\": \"string\",\r",
+							"            \"default\": \"\",\r",
+							"            \"title\": \"The token Schema\",\r",
+							"            \"examples\": [\r",
+							"                \"string1234\"\r",
+							"            ]\r",
+							"        }\r",
+							"    }\r",
+							"};\r",
+							"var actualJsonData = pm.response.json();\r",
+							"pm.test('Schema is valid', function () {\r",
+							"    //pm.expect(tv4.validate(actualJsonData, schema)).to.be.true;\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
