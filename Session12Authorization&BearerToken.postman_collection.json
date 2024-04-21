@@ -185,6 +185,47 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "BearerToken2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "0f6356baaa68b45ca871fd4919d5bbcf053c00bcf5ca86384faf30911bde81ab",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vinayak\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"sample2345@gmail.com\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
