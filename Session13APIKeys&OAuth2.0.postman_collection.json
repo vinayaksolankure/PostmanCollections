@@ -53,6 +53,102 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "OAuth2_0",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AT0DL1bHOVgaeJE6z35C_T7G0ykR-y82cX2DZBryTgA4hobdHxDpEcodBnN-oopjQbvrWub8y6lTc-lm",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "EDG5dN0SgRzNhaSou5HHxaNxxOnU8bQ21ZukUTHJ-WUv6mH5H9UtoIjI2H5zb2fEv7ORYZRb6-LAVBcR",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api-m",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListInvoices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer A21AAJu07adqraO-DE53vv0ul0yNs7Qqj6Ct4U8LwPDxLKCPJEFbby48MRblc7lki4dcgktJ77HenknNgP69qNBB-mBQtBhzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-m.sandbox.paypal.com/v1/invoicing/invoices?page=3&page_size=4&total_count_required=true",
+					"protocol": "https",
+					"host": [
+						"api-m",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"invoicing",
+						"invoices"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						},
+						{
+							"key": "page_size",
+							"value": "4"
+						},
+						{
+							"key": "total_count_required",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
